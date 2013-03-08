@@ -8,3 +8,27 @@ Getting Started
 You can install Vow-fs using Node Package Manager (npm):
 
     npm install vow-fs
+
+
+````javascript
+var fs = require('vow-fs');
+````
+
+API
+---
+####read(path, [encoding])####
+####write(path, data, [encoding])####
+####append(path, data, [encoding])####
+####remove(path)####
+####copy(sourcePath, targetPath)####
+####move(sourcePath, targetPath)####
+####stats(path)####
+####exists(path)####
+####link(sourcePath, targetPath)####
+####symLink(sourcePath, targetPath, [type])####
+####chown(path, uid, gid)####
+####chmod(path, mode)####
+####absolute(path)####
+####listDir(path)####
+####makeDir(path, [mode])####
+####removeDir(path)####
