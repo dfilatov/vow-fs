@@ -1,8 +1,8 @@
 {
-    "name" : "vow-io",
+    "name" : "vow-fs",
     "version" : "0.0.1",
-    "description" : "IO by Vow",
-    "homepage" : "https://github.com/dfilatov/vow-io",
+    "description" : "File I/O by Vow",
+    "homepage" : "https://github.com/dfilatov/vow-fs",
     "keywords" : ["vow", "file system"],
     "author" : "Dmitry Filatov <dfilatov@yandex-team.ru>",
     "contributors" : [{
@@ -11,12 +11,12 @@
     }],
     "repository":{
         "type" : "git",
-        "url"  : "http://github.com/dfilatov/vow-io.git"
+        "url"  : "http://github.com/dfilatov/vow-fs.git"
     },
     "dependencies": {},
     "devDependencies": {
         "vow"      : "0.1.x"
     },
-    "main" : "index",
+    "main" : "lib/fs",
     "engines" : { "node" : ">= 0.6.0" }
 }
