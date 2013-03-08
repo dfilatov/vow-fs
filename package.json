@@ -1,6 +1,6 @@
 {
     "name" : "vow-fs",
-    "version" : "0.0.1",
+    "version" : "0.0.2",
     "description" : "File I/O by Vow",
     "homepage" : "https://github.com/dfilatov/vow-fs",
     "keywords" : ["vow", "file system"],
@@ -14,8 +14,11 @@
         "url"  : "http://github.com/dfilatov/vow-fs.git"
     },
     "dependencies": {},
+    "peerDependencies": {
+        "vow" : "0.1.x"
+    },
     "devDependencies": {
-        "vow"      : "0.1.x"
+        "vow" : "0.1.x"
     },
     "main" : "lib/fs",
     "engines" : { "node" : ">= 0.6.0" }
