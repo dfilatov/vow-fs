@@ -1,6 +1,6 @@
 {
     "name" : "vow-fs",
-    "version" : "0.1.1",
+    "version" : "0.1.2",
     "description" : "File I/O by Vow",
     "homepage" : "https://github.com/dfilatov/vow-fs",
     "keywords" : ["vow", "file system"],
