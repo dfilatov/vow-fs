@@ -29,6 +29,9 @@ API
 ####chown(path, uid, gid)####
 ####chmod(path, mode)####
 ####absolute(path)####
+####isFile(path)####
+####isDir(path)####
+####isSocket(path)####
 ####listDir(path)####
 ####makeDir(path, [mode])####
 ####removeDir(path)####
