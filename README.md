@@ -33,5 +33,5 @@ API
 ####isDir(path)####
 ####isSocket(path)####
 ####listDir(path)####
-####makeDir(path, [mode])####
+####makeDir(path, [mode], [failIfExist=false])####
 ####removeDir(path)####
