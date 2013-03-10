@@ -18,8 +18,14 @@
         "vow" : "0.1.x"
     },
     "devDependencies": {
-        "vow" : "0.1.x"
+        "vow"      : "0.1.x",
+        "mocha"    : "",
+        "chai"     : "",
+        "istanbul" : ""
     },
     "main" : "lib/fs",
-    "engines" : { "node" : ">= 0.6.0" }
+    "engines" : { "node" : ">= 0.6.0" },
+    "scripts" : {
+        "test" : "./node_modules/istanbul/lib/cli.js test test/runner.js"
+    }
 }
