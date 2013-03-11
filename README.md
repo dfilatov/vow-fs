@@ -1,4 +1,4 @@
-Vow-fs
+Vow-fs [![Build Status](https://secure.travis-ci.org/dfilatov/vow-fs.png)](http://travis-ci.org/dfilatov/vow-fs)
 ======
 
 [Vow](https://github.com/dfilatov/jspromise)-based file I/O for Node.js
