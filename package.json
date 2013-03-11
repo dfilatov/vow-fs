@@ -19,8 +19,7 @@
     },
     "devDependencies": {
         "vow"      : "0.1.x",
-        "mocha"    : "",
-        "chai"     : "",
+        "nodeunit" : "",
         "istanbul" : ""
     },
     "main" : "lib/fs",
