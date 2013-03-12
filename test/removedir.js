@@ -14,19 +14,10 @@ module.exports = {
         done();
     },
 
-    'should remove file' : function(test) {
-        var file = path.join(TEST_DIR, 'file');
-        fs.writeFileSync(file, 'file');
-        vfs.remove(file).then(function() {
-            test.ok(!fs.existsSync(file));
-            test.done();
-        });
-    },
-
     'should remove empty directory' : function(test) {
         var dir = path.join(TEST_DIR, 'dir');
         fs.mkdirSync(dir);
-        vfs.remove(dir).then(function() {
+        vfs.removeDir(dir).then(function() {
             test.ok(!fs.existsSync(dir));
             test.done();
         });
@@ -40,8 +31,19 @@ module.exports = {
         fs.mkdirSync(path.join(dir, 'a', 'b'));
         fs.writeFileSync(path.join(dir, 'a', 'b', 'file1'), 'file1');
         fs.writeFileSync(path.join(dir, 'a', 'b', 'file2'), 'file2');
-        vfs.remove(dir).then(function() {
+        vfs.removeDir(dir).then(function() {
             test.ok(!fs.existsSync(dir));
+            test.done();
+        });
+    },
+
+    'should not remove file' : function(test) {
+        var filePath = path.join(TEST_DIR, 'file');
+        fs.writeFileSync(filePath, 'file');
+        vfs.removeDir(filePath).fail(function(err) {
+            test.equal(err.code, 'ENOTDIR');
+            test.ok(fs.existsSync(filePath));
+            fs.unlinkSync(filePath);
             test.done();
         });
     }
