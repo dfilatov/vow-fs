@@ -8,4 +8,8 @@ require('nodeunit').reporters.default.run(
         })
         .map(function(file) {
             return path.join('test', file);
-        }));
+        }),
+    null,
+    function(err) {
+        err && process.exit(1);
+    });
