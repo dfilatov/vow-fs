@@ -34,3 +34,4 @@ API
 ####isSocket(path)####
 ####listDir(path)####
 ####makeDir(path, [mode], [failIfExist=false])####
+####removeDir(path)####
