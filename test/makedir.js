@@ -16,53 +16,94 @@ module.exports = {
 
     'should make directory' : function(test) {
         var dir = path.join(TEST_DIR, 'a');
-        vfs.makeDir(dir).then(function() {
-            test.ok(fs.existsSync(dir));
-            test.ok(fs.statSync(dir).isDirectory());
-            fs.rmdirSync(dir);
-            test.done();
-        });
+        vfs.makeDir(dir)
+            .then(
+                function() {
+                    return vfs.exists(dir);
+                },
+                function() {
+                    test.ok(false);
+                })
+            .always(function(exists) {
+                test.ok(exists);
+                test.ok(fs.statSync(dir).isDirectory());
+                fs.rmdirSync(dir);
+                test.done();
+            });
     },
 
     'should make directory if exists' :  function(test) {
         var dir = path.join(TEST_DIR, 'a');
         fs.mkdirSync(dir);
-        vfs.makeDir(dir).then(function() {
-            test.ok(fs.existsSync(dir));
-            test.ok(fs.statSync(dir).isDirectory());
-            fs.rmdirSync(dir);
-            test.done();
-        });
+        vfs.makeDir(dir)
+            .then(
+                function() {
+                    return vfs.exists(dir);
+                },
+                function() {
+                    test.ok(false);
+                })
+            .always(function(exists) {
+                test.ok(exists);
+                test.ok(fs.statSync(dir).isDirectory());
+                fs.rmdirSync(dir);
+                test.done();
+            });
     },
 
     'should be failed if directory exists' : function(test) {
         var dir = path.join(TEST_DIR, 'a');
         fs.mkdirSync(dir);
-        vfs.makeDir(dir, true).fail(function() {
-            fs.rmdirSync(dir);
-            test.done();
-        });
+        vfs.makeDir(dir, true)
+            .then(
+                function() {
+                    test.ok(false);
+                },
+                function() {
+                    test.ok(true);
+                    fs.rmdirSync(dir);
+                })
+            .always(function() {
+                test.done();
+            });
     },
 
     'should be failed if file with same name exists' : function(test) {
         var dir = path.join(TEST_DIR, 'test-file');
         fs.writeFileSync(dir, 'test');
-        vfs.makeDir(dir).fail(function() {
-            fs.unlink(path.join(TEST_DIR, 'test-file'));
-            test.done();
-        });
+        vfs.makeDir(dir)
+            .then(
+                function() {
+                    test.ok(false);
+                },
+                function() {
+                    test.ok(true);
+                    fs.unlink(path.join(TEST_DIR, 'test-file'));
+                })
+            .always(function() {
+                test.done();
+            });
     },
 
     'should make directory tree' : function(test) {
         var dir = path.join(TEST_DIR, 'a/b/c');
-        vfs.makeDir(dir).then(function() {
-            test.ok(fs.existsSync(dir));
-            test.ok(fs.statSync(dir).isDirectory());
-            fs.rmdirSync(path.join(TEST_DIR, 'a/b/c'));
-            fs.rmdirSync(path.join(TEST_DIR, 'a/b'));
-            fs.rmdirSync(path.join(TEST_DIR, 'a'));
-            test.done();
-        });
+        vfs.makeDir(dir)
+            .then(
+                function() {
+                    return vfs.exists(dir);
+                },
+                function() {
+                    test.ok(false);
+                })
+            .always(
+                function(exists) {
+                    test.ok(exists);
+                    test.ok(fs.statSync(dir).isDirectory());
+                    fs.rmdirSync(path.join(TEST_DIR, 'a/b/c'));
+                    fs.rmdirSync(path.join(TEST_DIR, 'a/b'));
+                    fs.rmdirSync(path.join(TEST_DIR, 'a'));
+                    test.done();
+                });
     },
 
     'should make directory tree if exists' : function(test) {
@@ -70,11 +111,19 @@ module.exports = {
         fs.mkdirSync(path.join(TEST_DIR, 'a'));
         fs.mkdirSync(path.join(TEST_DIR, 'a', 'b'));
         fs.mkdirSync(dir);
-        vfs.makeDir(dir).then(function() {
-            fs.rmdirSync(path.join(TEST_DIR, 'a/b/c'));
-            fs.rmdirSync(path.join(TEST_DIR, 'a/b'));
-            fs.rmdirSync(path.join(TEST_DIR, 'a'));
-            test.done();
-        });
+        vfs.makeDir(dir)
+            .then(
+                function() {
+                    fs.rmdirSync(path.join(TEST_DIR, 'a/b/c'));
+                    fs.rmdirSync(path.join(TEST_DIR, 'a/b'));
+                    fs.rmdirSync(path.join(TEST_DIR, 'a'));
+                    test.ok(true);
+                },
+                function() {
+                    test.ok(false);
+                })
+            .always(function() {
+                test.done();
+            });
     }
 };

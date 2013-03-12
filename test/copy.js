@@ -96,6 +96,6 @@ module.exports = {
                 })
             .always(function() {
                 test.done();
-            })
+            });
     }
 };

@@ -17,10 +17,18 @@ module.exports = {
     'should remove empty directory' : function(test) {
         var dir = path.join(TEST_DIR, 'dir');
         fs.mkdirSync(dir);
-        vfs.removeDir(dir).then(function() {
-            test.ok(!fs.existsSync(dir));
-            test.done();
-        });
+        vfs.removeDir(dir)
+            .then(
+                function() {
+                    return vfs.exists(dir);
+                },
+                function() {
+                    test.ok(false);
+                })
+            .always(function(exists) {
+                test.ok(!exists);
+                test.done();
+            });
     },
 
     'should remove directory tree' : function(test) {
@@ -31,20 +39,36 @@ module.exports = {
         fs.mkdirSync(path.join(dir, 'a', 'b'));
         fs.writeFileSync(path.join(dir, 'a', 'b', 'file1'), 'file1');
         fs.writeFileSync(path.join(dir, 'a', 'b', 'file2'), 'file2');
-        vfs.removeDir(dir).then(function() {
-            test.ok(!fs.existsSync(dir));
-            test.done();
-        });
+        vfs.removeDir(dir)
+            .then(
+                function() {
+                    return vfs.exists(dir);
+                },
+                function() {
+                    test.ok(false);
+                })
+            .always(function(exists) {
+                test.ok(!exists);
+                test.done();
+            });
     },
 
     'should not remove file' : function(test) {
         var filePath = path.join(TEST_DIR, 'file');
         fs.writeFileSync(filePath, 'file');
-        vfs.removeDir(filePath).fail(function(err) {
-            test.equal(err.code, 'ENOTDIR');
-            test.ok(fs.existsSync(filePath));
-            fs.unlinkSync(filePath);
-            test.done();
-        });
+        vfs.removeDir(filePath)
+            .then(
+                function() {
+                    test.ok(false);
+                },
+                function(err) {
+                    test.equal(err.code, 'ENOTDIR');
+                    return vfs.exists(filePath);
+                })
+            .always(function(exists) {
+                test.ok(exists);
+                fs.unlinkSync(filePath);
+                test.done();
+            });
     }
 };
