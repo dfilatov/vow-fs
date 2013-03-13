@@ -25,8 +25,8 @@ module.exports = {
                 function() {
                     test.ok(false);
                 })
-            .always(function(exists) {
-                test.ok(!exists);
+            .always(function(promise) {
+                test.ok(!promise.valueOf());
                 test.done();
             });
     },
@@ -47,8 +47,8 @@ module.exports = {
                 function() {
                     test.ok(false);
                 })
-            .always(function(exists) {
-                test.ok(!exists);
+            .always(function(promise) {
+                test.ok(!promise.valueOf());
                 test.done();
             });
     },
@@ -65,8 +65,8 @@ module.exports = {
                     test.equal(err.code, 'ENOTDIR');
                     return vfs.exists(filePath);
                 })
-            .always(function(exists) {
-                test.ok(exists);
+            .always(function(promise) {
+                test.ok(promise.valueOf());
                 fs.unlinkSync(filePath);
                 test.done();
             });

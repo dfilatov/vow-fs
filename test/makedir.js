@@ -24,8 +24,8 @@ module.exports = {
                 function() {
                     test.ok(false);
                 })
-            .always(function(exists) {
-                test.ok(exists);
+            .always(function(promise) {
+                test.ok(promise.valueOf());
                 test.ok(fs.statSync(dir).isDirectory());
                 fs.rmdirSync(dir);
                 test.done();
@@ -43,8 +43,8 @@ module.exports = {
                 function() {
                     test.ok(false);
                 })
-            .always(function(exists) {
-                test.ok(exists);
+            .always(function(promise) {
+                test.ok(promise.valueOf());
                 test.ok(fs.statSync(dir).isDirectory());
                 fs.rmdirSync(dir);
                 test.done();
@@ -95,15 +95,14 @@ module.exports = {
                 function() {
                     test.ok(false);
                 })
-            .always(
-                function(exists) {
-                    test.ok(exists);
-                    test.ok(fs.statSync(dir).isDirectory());
-                    fs.rmdirSync(path.join(TEST_DIR, 'a/b/c'));
-                    fs.rmdirSync(path.join(TEST_DIR, 'a/b'));
-                    fs.rmdirSync(path.join(TEST_DIR, 'a'));
-                    test.done();
-                });
+            .always(function(promise) {
+                test.ok(promise.valueOf());
+                test.ok(fs.statSync(dir).isDirectory());
+                fs.rmdirSync(path.join(TEST_DIR, 'a/b/c'));
+                fs.rmdirSync(path.join(TEST_DIR, 'a/b'));
+                fs.rmdirSync(path.join(TEST_DIR, 'a'));
+                test.done();
+            });
     },
 
     'should make directory tree if exists' : function(test) {
