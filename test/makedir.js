@@ -80,7 +80,7 @@ module.exports = {
                     test.ok(true);
                 })
             .always(function() {
-                fs.unlink(path.join(TEST_DIR, 'test-file'));
+                fs.unlinkSync(path.join(TEST_DIR, 'test-file'));
                 test.done();
             });
     },
