@@ -61,9 +61,9 @@ module.exports = {
                 },
                 function() {
                     test.ok(true);
-                    fs.rmdirSync(dir);
                 })
             .always(function() {
+                fs.rmdirSync(dir);
                 test.done();
             });
     },
@@ -78,9 +78,9 @@ module.exports = {
                 },
                 function() {
                     test.ok(true);
-                    fs.unlink(path.join(TEST_DIR, 'test-file'));
                 })
             .always(function() {
+                fs.unlinkSync(path.join(TEST_DIR, 'test-file'));
                 test.done();
             });
     },
@@ -113,15 +113,15 @@ module.exports = {
         vfs.makeDir(dir)
             .then(
                 function() {
-                    fs.rmdirSync(path.join(TEST_DIR, 'a/b/c'));
-                    fs.rmdirSync(path.join(TEST_DIR, 'a/b'));
-                    fs.rmdirSync(path.join(TEST_DIR, 'a'));
                     test.ok(true);
                 },
                 function() {
                     test.ok(false);
                 })
             .always(function() {
+                fs.rmdirSync(path.join(TEST_DIR, 'a/b/c'));
+                fs.rmdirSync(path.join(TEST_DIR, 'a/b'));
+                fs.rmdirSync(path.join(TEST_DIR, 'a'));
                 test.done();
             });
     }
