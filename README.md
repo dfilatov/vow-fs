@@ -32,6 +32,7 @@ API
 ####isFile(path)####
 ####isDir(path)####
 ####isSocket(path)####
+####isSymLink(path)####
 ####listDir(path)####
 ####makeDir(path, [mode], [failIfExist=false])####
 ####removeDir(path)####
