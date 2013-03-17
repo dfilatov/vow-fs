@@ -19,14 +19,15 @@ API
 ####read(path, [encoding=utf8])####
 Returns a promise for the file's content at a given ````path````.
 ####write(path, data, [encoding=utf8])####
-Write ````data```` to file at a given ````path````. Returns a promise for the completion of the operation.
+Writes ````data```` to file at a given ````path````. Returns a promise for the completion of the operation.
 ####append(path, data, [encoding=utf8])####
-Append ````data```` to file's content at a given ````path````. Returns a promise for the completion of the operation.
+Appends````data```` to file's content at a given ````path````. Returns a promise for the completion of the operation.
 ####remove(path)####
 Removes a file at a given ````path````. Returns a promise for the completion of the operation.
 ####copy(sourcePath, targetPath)####
 Copies a file from ````sourcePath```` to ````targetPath````. Returns a promise for the completion of the operation.
 ####move(sourcePath, targetPath)####
+Move a file or directory from ````sourcePath```` to ````targetPath````. Returns a promise for the completion of the operation.
 ####stats(path)####
 ####exists(path)####
 ####link(sourcePath, targetPath)####
