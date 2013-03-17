@@ -19,11 +19,13 @@ API
 ####read(path, [encoding=utf8])####
 Returns a promise for the file's content at a given ````path````.
 ####write(path, data, [encoding=utf8])####
+Write ````data```` to file at a given ````path````. Returns a promise for the completion of the operation.
 ####append(path, data, [encoding=utf8])####
+Append ````data```` to file's content at a given ````path````. Returns a promise for the completion of the operation.
 ####remove(path)####
-Removes a file at a given ````path````.
+Removes a file at a given ````path````. Returns a promise for the completion of the operation.
 ####copy(sourcePath, targetPath)####
-Copies a file from ````sourcePath```` to ````targetPath````.
+Copies a file from ````sourcePath```` to ````targetPath````. Returns a promise for the completion of the operation.
 ####move(sourcePath, targetPath)####
 ####stats(path)####
 ####exists(path)####
@@ -42,6 +44,6 @@ Returns a promise for whether the given ````path```` is a socket.
 Returns a promise for whether the given ````path```` is a symbolic link.
 ####listDir(path)####
 ####makeDir(path, [mode=0777], [failIfExist=false])####
-Makes a directory at a given ````path```` and any necessary subdirectories (like ````mkdir -p````).
+Makes a directory at a given ````path```` and any necessary subdirectories (like ````mkdir -p````). Returns a promise for the completion of the operation.
 ####removeDir(path)####
-Recursively removes a directory at a given path (like ````remove -rf````).
+Recursively removes a directory at a given path (like ````remove -rf````). Returns a promise for the completion of the operation.
