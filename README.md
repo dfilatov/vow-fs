@@ -9,7 +9,6 @@ You can install Vow-fs using Node Package Manager (npm):
 
     npm install vow-fs
 
-
 ````javascript
 var fs = require('vow-fs');
 ````
@@ -27,11 +26,15 @@ Removes a file at a given ````path````. Returns a promise for the completion of 
 ####copy(sourcePath, targetPath)####
 Copies a file from ````sourcePath```` to ````targetPath````. Returns a promise for the completion of the operation.
 ####move(sourcePath, targetPath)####
-Move a file or directory from ````sourcePath```` to ````targetPath````. Returns a promise for the completion of the operation.
+Moves a file or directory from ````sourcePath```` to ````targetPath````. Returns a promise for the completion of the operation.
 ####stats(path)####
+Returns a promise for the metadata about the given ````path```` as a [Stats](http://nodejs.org/api/fs.html#fs_class_fs_stats) object.
 ####exists(path)####
+Returns a promise for whether the given ````path```` exists.
 ####link(sourcePath, targetPath)####
-####symLink(sourcePath, targetPath, [type])####
+Creates a hard link from the ````sourcePath```` to ````targetPath````.
+####symLink(sourcePath, targetPath, [type=file])####
+Creates a symbolic link from the ````sourcePath```` to ````targetPath````.
 ####chown(path, uid, gid)####
 ####chmod(path, mode)####
 ####absolute(path)####
