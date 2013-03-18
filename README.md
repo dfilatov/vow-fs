@@ -36,7 +36,9 @@ Creates a hard link from the ````sourcePath```` to ````targetPath````.
 ####symLink(sourcePath, targetPath, [type=file])####
 Creates a symbolic link from the ````sourcePath```` to ````targetPath````.
 ####chown(path, uid, gid)####
+Changes the owner of a given ````path````.
 ####chmod(path, mode)####
+Changes the mode of a given ````path```` to ````mode````.
 ####absolute(path)####
 ####isFile(path)####
 Returns a promise for whether the given ````path```` is a file.
@@ -47,6 +49,7 @@ Returns a promise for whether the given ````path```` is a socket.
 ####isSymLink(path)####
 Returns a promise for whether the given ````path```` is a symbolic link.
 ####listDir(path)####
+Returns a promise for a list of files and directories in directory at the given ````path````.
 ####makeDir(path, [mode=0777], [failIfExist=false])####
 Makes a directory at a given ````path```` and any necessary subdirectories (like ````mkdir -p````). Returns a promise for the completion of the operation.
 ####removeDir(path)####
