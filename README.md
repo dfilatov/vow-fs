@@ -50,10 +50,11 @@ Returns a promise for whether the given ````path```` is a socket.
 Returns a promise for whether the given ````path```` is a symbolic link.
 ####makeTmpFile([options])####
 Makes a temporary file. Returns a promise with generated path to file.
-````options````:
+The ````options````:
   * prefix (absent by default)
   * dir (operating system's directory for temp files by default)
   * ext (````.tmp```` by default)
+
 ####listDir(path)####
 Returns a promise for a list of files and directories in directory at the given ````path````.
 ####makeDir(path, [mode=0777], [failIfExist=false])####
