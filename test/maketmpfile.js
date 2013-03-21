@@ -2,6 +2,7 @@ var fs = require('fs'),
     path = require('path'),
     os = require('os'),
     vfs = require('../lib/fs'),
+    tmpDir = os.tmpdir || os.tmpDir || function() { return '/tmp'; },
     TEST_DIR = path.join(__dirname, 'test-dir');
 
 module.exports = {
@@ -28,7 +29,7 @@ module.exports = {
                 })
             .then(function(exists) {
                 fs.unlinkSync(filePath);
-                test.strictEqual(path.dirname(filePath), path.resolve(os.tmpdir()));
+                test.strictEqual(path.dirname(filePath), path.resolve(tmpDir()));
                 test.strictEqual(path.extname(filePath), '.tmp');
                 test.ok(exists);
             })
