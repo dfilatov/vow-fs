@@ -14,7 +14,8 @@
         "url"  : "http://github.com/dfilatov/vow-fs.git"
     },
     "dependencies": {
-        "node-uuid" : "1.4.0"
+        "node-uuid"   : "1.4.0",
+        "graceful-fs" : "1.2.1"
     },
     "peerDependencies": {
         "vow" : ">= 0.1.x"
