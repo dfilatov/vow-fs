@@ -17,10 +17,10 @@
         "node-uuid" : "1.4.0"
     },
     "peerDependencies": {
-        "vow" : ">= 0.1.x"
+        "vow" : ">= 0.3.9"
     },
     "devDependencies": {
-        "vow"      : ">= 0.1.x",
+        "vow"      : ">= 0.3.9",
         "nodeunit" : "",
         "istanbul" : ""
     },
