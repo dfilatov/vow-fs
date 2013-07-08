@@ -1,9 +1,9 @@
 {
     "name" : "vow-fs",
-    "version" : "0.2.1",
+    "version" : "0.2.2",
     "description" : "File I/O by Vow",
     "homepage" : "https://github.com/dfilatov/vow-fs",
-    "keywords" : ["vow", "file system"],
+    "keywords" : ["vow", "promise", "file system"],
     "author" : "Dmitry Filatov <dfilatov@yandex-team.ru>",
     "contributors" : [{
         "name"  : "Dmitry Filatov",
