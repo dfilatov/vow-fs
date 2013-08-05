@@ -1,6 +1,6 @@
 {
     "name" : "vow-fs",
-    "version" : "0.2.2",
+    "version" : "0.2.3",
     "description" : "File I/O by Vow",
     "homepage" : "https://github.com/dfilatov/vow-fs",
     "keywords" : ["vow", "promise", "file system"],
