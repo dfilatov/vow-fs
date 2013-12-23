@@ -1,7 +1,7 @@
-Vow-fs [![Build Status](https://secure.travis-ci.org/dfilatov/vow-fs.png)](http://travis-ci.org/dfilatov/vow-fs)
+vow-fs [![Build Status](https://secure.travis-ci.org/dfilatov/vow-fs.png)](http://travis-ci.org/dfilatov/vow-fs)
 ======
 
-[Vow](https://github.com/dfilatov/jspromise)-based file I/O for Node.js
+[Vow](https://github.com/dfilatov/vow)-based file I/O for Node.js
 
 Requirements
 ------------
@@ -9,7 +9,7 @@ Vow-fs works with Node.js 0.6, 0.8 and 0.10.
 
 Getting Started
 ---------------
-You can install Vow-fs using Node Package Manager (npm):
+You can install vow-fs using Node Package Manager (npm):
 
     npm install vow-fs
 
