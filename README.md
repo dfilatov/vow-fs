@@ -1,4 +1,4 @@
-vow-fs [![Build Status](https://secure.travis-ci.org/dfilatov/vow-fs.png)](http://travis-ci.org/dfilatov/vow-fs)
+vow-fs [![NPM version](https://badge.fury.io/js/vow-fs.png)](http://badge.fury.io/js/vow-fs) [![Build Status](https://secure.travis-ci.org/dfilatov/vow-fs.png)](http://travis-ci.org/dfilatov/vow-fs)
 ======
 
 [Vow](https://github.com/dfilatov/vow)-based file I/O for Node.js
