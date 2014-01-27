@@ -15,13 +15,14 @@
     },
     "dependencies": {
         "node-uuid" : "1.4.0",
-        "vow-queue" : "0.1.0"
+        "vow-queue" : "0.1.0",
+        "glob"      : "3.2.8"
     },
     "peerDependencies": {
-        "vow" : ">= 0.4.0"
+        "vow" : "0.4.x"
     },
     "devDependencies": {
-        "vow"      : ">= 0.4.0",
+        "vow"      : "0.4.x",
         "nodeunit" : "",
         "istanbul" : ""
     },
