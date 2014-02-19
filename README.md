@@ -66,3 +66,5 @@ Returns a promise for a list of files and directories in directory at the given 
 Makes a directory at a given ````path```` and any necessary subdirectories (like ````mkdir -p````). Returns a promise for the completion of the operation.
 ####removeDir(path)####
 Recursively removes a directory at a given path (like ````remove -rf````). Returns a promise for the completion of the operation.
+####glob(pattern, [options])####
+Matches files using the patterns. See https://github.com/isaacs/node-glob for details.
