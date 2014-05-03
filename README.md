@@ -32,7 +32,7 @@ Removes a file at a given ````path````. Returns a promise for the completion of 
 Copies a file from ````sourcePath```` to ````targetPath````. Returns a promise for the completion of the operation.
 ####move(sourcePath, targetPath)####
 Moves a file or directory from ````sourcePath```` to ````targetPath````. Returns a promise for the completion of the operation.
-####stats(path)####
+####stat(path)####
 Returns a promise for the metadata about the given ````path```` as a [Stats](http://nodejs.org/api/fs.html#fs_class_fs_stats) object.
 ####exists(path)####
 Returns a promise for whether the given ````path```` exists.
