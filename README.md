@@ -20,11 +20,11 @@ var fs = require('vow-fs');
 
 API
 ---
-####read(path, [encoding=utf8])####
+####read(path, [encoding])####
 Returns a promise for the file's content at a given ````path````.
-####write(path, data, [encoding=utf8])####
+####write(path, data, [encoding])####
 Writes ````data```` to file at a given ````path````. Returns a promise for the completion of the operation.
-####append(path, data, [encoding=utf8])####
+####append(path, data, [encoding])####
 Appends````data```` to file's content at a given ````path````. Returns a promise for the completion of the operation.
 ####remove(path)####
 Removes a file at a given ````path````. Returns a promise for the completion of the operation.
