@@ -16,7 +16,7 @@
     "dependencies": {
         "node-uuid" : "1.4.0",
         "vow"       : "0.4.4",
-        "vow-queue" : "0.3.1",
+        "vow-queue" : "0.4.1",
         "glob"      : "3.2.8"
     },
     "devDependencies": {
