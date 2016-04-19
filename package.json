@@ -14,7 +14,7 @@
         "url"  : "http://github.com/dfilatov/vow-fs.git"
     },
     "dependencies": {
-        "node-uuid" : "^1.4.2",
+        "uuid"      : "^2.0.2",
         "vow"       : "^0.4.7",
         "vow-queue" : "^0.4.1",
         "glob"      : "^4.3.1"
