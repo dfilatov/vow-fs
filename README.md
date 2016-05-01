@@ -5,7 +5,7 @@ vow-fs [![NPM version](https://badge.fury.io/js/vow-fs.png)](http://badge.fury.i
 
 Requirements
 ------------
-Vow-fs works with Node.js 0.6, 0.8 and 0.10.
+Vow-fs works with Node.js 0.6 and above.
 
 Getting Started
 ---------------
